@@ -29,11 +29,11 @@ def readModifyBinFile(inputFilePath, outputFilePath):
         oldchecksum = data[0x1C20]
         data[0x1C20] = checksum
 
-        with open(outputFilePath, 'wb') as output_file:
-            output_file.write(data)
+        with open(outputFilePath, 'wb') as outputFile:
+            outputFile.write(data)
 
-        print(f"File has been processed and saved as {outputFilePath}")
+        print(f"File saved as {outputFilePath}")
     except IOError as e:
-        print(f"An error occurred: {e}")
+        print(f"Error occurred: {e}")
 
 readModifyBinFile(inputFilePath, outputFilePath)
